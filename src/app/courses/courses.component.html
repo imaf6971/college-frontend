@@ -1,0 +1,15 @@
+<mat-card [ngClass]="{'container': isNotHandset$ | async}">
+  <mat-card-title mat-subheader>
+    Направления
+  </mat-card-title>
+  <mat-card-content>
+    <mat-nav-list *ngIf="courses">
+      <mat-list-item *ngFor="let course of courses">
+        <mat-icon matListIcon>group</mat-icon>
+        <a matLine [routerLink]="['/courses', course.id]">{{course.title}}</a>
+        <p matLine>{{course.leader}}</p>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card-content>
+</mat-card>
