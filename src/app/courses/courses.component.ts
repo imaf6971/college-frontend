@@ -10,28 +10,7 @@ import { Course } from './interfaces/course';
 })
 export class CoursesComponent  {
 
-  courses?: Course[] = [
-    {
-      id: 1,
-      title: "Lol",
-      leader: "Lol1",
-    },
-    {
-      id: 1,
-      title: "Lol",
-      leader: "Lol1",
-    },
-    {
-      id: 1,
-      title: "Lol",
-      leader: "Lol1",
-    },
-    {
-      id: 1,
-      title: "Lol",
-      leader: "Lol1",
-    },
-  ];
+  courses?: Course[];
 
   isNotHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
