@@ -16,12 +16,14 @@ import { MatInputModule } from "@angular/material/input";
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
