@@ -1,1 +1,14 @@
-<p>courses works!</p>
+<mat-card>
+  <mat-card-title>
+    Направления
+  </mat-card-title>
+  <mat-card-content>
+    <mat-nav-list *ngIf="courses">
+      <mat-list-item *ngFor="let course of courses">
+        <mat-icon matListIcon>group</mat-icon>
+        <a matLine [routerLink]="['/courses', course.id]">{{course.title}}</a>
+        <p matLine>{{course.leader}}</p>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card-content>
+</mat-card>
