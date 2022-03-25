@@ -5,9 +5,17 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Меню</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <div mat-subheader>
+        Студенческий совет
+      </div>
+      <a mat-list-item routerLink="#">Направления</a>
+      <mat-divider></mat-divider>
+      <div mat-subheader>
+        Направление
+      </div>
+      <a mat-list-item routerLink="#">Участники</a>
+      <a mat-list-item routerLink="#">Мероприятия</a>
+      <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
