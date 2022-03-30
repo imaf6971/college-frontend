@@ -1,30 +1,30 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Меню</mat-toolbar>
     <mat-nav-list>
-      <div mat-subheader>
-        Студенческий совет
+      <div *ngIf="isLoggedIn">
+        <div mat-subheader>
+          Студенческий совет
+        </div>
+        <a mat-list-item routerLink="courses">Направления</a>
+        <mat-divider></mat-divider>
+        <div mat-subheader>
+          Направление
+        </div>
+        <a mat-list-item routerLink="#">Участники</a>
+        <a mat-list-item routerLink="#">Мероприятия</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="logout()">Выйти</a>
       </div>
-      <a mat-list-item routerLink="courses">Направления</a>
-      <mat-divider></mat-divider>
-      <div mat-subheader>
-        Направление
+      <div *ngIf="!isLoggedIn">
+        <a mat-list-item routerLink="login">Войти</a>
       </div>
-      <a mat-list-item routerLink="#">Участники</a>
-      <a mat-list-item routerLink="#">Мероприятия</a>
-      <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
