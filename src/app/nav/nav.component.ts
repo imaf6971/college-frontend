@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '../login/services/auth.service';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 @Component({
   selector: 'app-nav',
@@ -21,7 +23,9 @@ export class NavComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private authService: AuthService) {}
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.authService.isAuthenticated
@@ -30,5 +34,6 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
