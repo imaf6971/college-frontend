@@ -18,4 +18,10 @@ export class CourseService implements AbstractCourseService {
     return this.http
       .get<Course[]>(`${environment.apiUrl}/api/v1/courses`);
   }
+
+  public getCourseById(id: number): Observable<Course> {
+    return this.http
+      .get<Course>(`${environment.apiUrl}/api/v1/courses/${id}`);
+  }
+
 }

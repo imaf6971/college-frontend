@@ -85,6 +85,9 @@ export class CourseServiceMock implements AbstractCourseService {
     return of(this.courses);
   }
 
-
+  getCourseById(id: number): Observable<Course> {
+    const course = this.courses.find(course => course.id == id)!;
+    return of(course);
+  }
 }
 
