@@ -4,12 +4,12 @@
   </mat-card-title>
   <mat-card-content>
     <mat-nav-list *ngIf="courses">
-      <mat-list-item *ngFor="let course of courses">
-        <mat-icon matListIcon>group</mat-icon>
-        <a matLine [routerLink]="['/courses', course.id]">{{course.title}}</a>
+      <a mat-list-item [routerLink]="['/courses', course.id]" *ngFor="let course of courses">
+        <p matLine>{{course.title}}</p>
         <p matLine>{{course.leader}}</p>
+        <mat-icon matListIcon>group</mat-icon>
         <mat-divider></mat-divider>
-      </mat-list-item>
+      </a>
     </mat-nav-list>
   </mat-card-content>
 </mat-card>
