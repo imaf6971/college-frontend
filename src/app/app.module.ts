@@ -18,13 +18,15 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './courses/courses.component';
+import { CourseInfoComponent } from './courses/course-info/course-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     LoginComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,
