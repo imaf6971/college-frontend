@@ -13,14 +13,7 @@ export class CoursesComponent implements OnInit {
 
   courses?: Course[];
 
-  isNotHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => !result.matches),
-      shareReplay()
-    );
-
   constructor(
-    private breakpointObserver: BreakpointObserver,
     private courseService: AbstractCourseService
     ) { }
 
