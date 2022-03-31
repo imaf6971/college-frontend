@@ -19,6 +19,7 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseInfoComponent } from './courses/course-info/course-info.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { CourseInfoComponent } from './courses/course-info/course-info.component
     MatListModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    ...environment.providers
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,9 +2,16 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { AbstractCourseService } from "src/app/courses/services/course.service.abstract";
+import { CourseServiceMock } from "src/app/courses/services/course.service.mock";
+
 export const environment = {
   production: false,
-  apiUrl: "localhost:8080"
+  apiUrl: "localhost:8080",
+  providers: [{
+    provide: AbstractCourseService,
+    useClass: CourseServiceMock
+  }]
 };
 
 /*
