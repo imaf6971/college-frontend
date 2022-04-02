@@ -1,6 +1,4 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, shareReplay } from 'rxjs';
 import { Course } from './interfaces/course';
 import { AbstractCourseService } from './services/course.service.abstract';
 

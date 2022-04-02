@@ -1,5 +1,21 @@
-<div *ngIf="course">
+<ng-container *ngIf="course">
+  <div>
+    <h2>{{course.title}} направление</h2>
+  </div>
   <mat-card>
-    Я родился!
+    <mat-card-title>{{course.leader}}</mat-card-title>
+    <mat-card-subtitle>Руководитель направления</mat-card-subtitle>
   </mat-card>
-</div>
+  <mat-card >
+    <mat-card-title>Участники</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let member of course.students">
+          <mat-icon matListIcon>person</mat-icon>
+          <span matLine>{{member.name}}</span>
+          <span matLine>{{member.group}}</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
